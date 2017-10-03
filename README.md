@@ -1,4 +1,4 @@
-# Saiy API Example App
+# Saiy® API Example App
 
 This application demonstrates some methods Saiy exposes in order to allow developers of other Android applications to use features of Saiy.
 
