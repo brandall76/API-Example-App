@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="ai.saiy.android.apiexample"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="ai.saiy.android.permission.CONTROL_SAIY"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:label="@string/app_name"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service
+            android:name="ai.saiy.android.apiexample.service.MyIntentService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ai.saiy.android.SAIY_INTENT_RECEIVER"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,67 @@
+<!--
+  ~    Copyright 2016 Saiy™ Ltd
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">API Example App</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="tts_prompt">Select TTS Provider</string>
+    <string name="vr_prompt">Select VR Provider</string>
+    <string name="nlu_prompt">Select NLU Provider</string>
+
+    <string name="hint_et">Enter text to speak here</string>
+    <string name="run">Run</string>
+
+    <string name="default_intro">This is the default intro</string>
+    <string name="install_dialog_title">Voice Capabilities</string>
+    <string name="install_dialog_content">Did you know that you can enable voice interaction for this
+        application by installing the free and open source app Saiy? \n etc \n etc</string>
+    <string name="install_dialog_positive">Show me!</string>
+    <string name="install_dialog_negative">Not now</string>
+    <string name="ac_button_done" translatable="true">Done button</string>
+
+    <!--preserve order-->
+    <string-array name="array_tts_providers">
+        <item>TTS Device Default</item>
+        <item>TTS Nuance</item>
+    </string-array>
+
+    <!--preserve order-->
+    <string-array name="array_vr_providers">
+        <item>VR None</item>
+        <item>VR Native</item>
+        <item>VR Google Cloud</item>
+        <item>VR Google Chromium</item>
+        <item>VR Nuance</item>
+        <item>VR Microsoft</item>
+        <item>VR IBM</item>
+        <item>VR Wit</item>
+    </string-array>
+
+    <!--preserve order-->
+    <string-array name="array_nlu_providers">
+        <item>NLU None</item>
+        <item>NLU Nuance</item>
+        <item>NLU Microsoft</item>
+        <item>NLU API.ai</item>
+        <item>NLU Wit</item>
+    </string-array>
+
+</resources>
