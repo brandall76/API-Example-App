@@ -62,3 +62,5 @@ Please use the [Stack Overflow tag](https://stackoverflow.com/tags/saiy/info) fo
 
 For code issues and crashes, please open an issue.
 
+For discussion, please use the [XDA development thread](https://forum.xda-developers.com/showthread.php?t=1508195) for now.
+
