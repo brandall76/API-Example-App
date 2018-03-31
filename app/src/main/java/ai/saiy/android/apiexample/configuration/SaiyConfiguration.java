@@ -16,10 +16,6 @@
 
 package ai.saiy.android.apiexample.configuration;
 
-/**
- * Created by benrandall76@gmail.com on 28/09/2016.
- */
-
 import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.NonNull;

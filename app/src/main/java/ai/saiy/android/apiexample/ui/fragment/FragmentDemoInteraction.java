@@ -19,6 +19,7 @@ package ai.saiy.android.apiexample.ui.fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
@@ -99,15 +100,15 @@ public class FragmentDemoInteraction extends Fragment implements View.OnClickLis
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+    public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         Log.i(CLS_NAME, "onCreateView");
 
         final View rootView = inflater.inflate(R.layout.fragment_demo_interaction, container, false);
 
-        button = (Button) rootView.findViewById(R.id.button);
+        button = rootView.findViewById(R.id.button);
         button.setOnClickListener(this);
 
-        tvResults = (TextView) rootView.findViewById(R.id.tvResults);
+        tvResults = rootView.findViewById(R.id.tvResults);
         tvResults.setMovementMethod(ScrollingMovementMethod.getInstance());
 
         return rootView;

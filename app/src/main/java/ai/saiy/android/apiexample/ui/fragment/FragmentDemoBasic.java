@@ -132,24 +132,24 @@ public class FragmentDemoBasic extends Fragment implements AdapterView.OnItemSel
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+    public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         Log.i(CLS_NAME, "onCreateView");
 
         final View rootView = inflater.inflate(R.layout.fragment_demo_basic, container, false);
 
-        spinnerTTS = (Spinner) rootView.findViewById(R.id.spinnerTTS);
+        spinnerTTS = rootView.findViewById(R.id.spinnerTTS);
         spinnerTTS.setOnItemSelectedListener(this);
-        spinnerVR = (Spinner) rootView.findViewById(R.id.spinnerVR);
+        spinnerVR = rootView.findViewById(R.id.spinnerVR);
         spinnerVR.setOnItemSelectedListener(this);
-        spinnerNLU = (Spinner) rootView.findViewById(R.id.spinnerNLU);
+        spinnerNLU = rootView.findViewById(R.id.spinnerNLU);
         spinnerNLU.setOnItemSelectedListener(this);
 
-        etSpeech = (EditText) rootView.findViewById(R.id.etSpeech);
+        etSpeech = rootView.findViewById(R.id.etSpeech);
 
-        tvResults = (TextView) rootView.findViewById(R.id.tvResults);
+        tvResults = rootView.findViewById(R.id.tvResults);
         tvResults.setMovementMethod(ScrollingMovementMethod.getInstance());
 
-        final ImageButton imageButton = (ImageButton) rootView.findViewById(R.id.ibRun);
+        final ImageButton imageButton = rootView.findViewById(R.id.ibRun);
         imageButton.setOnClickListener(this);
 
         return rootView;
@@ -350,11 +350,7 @@ public class FragmentDemoBasic extends Fragment implements AdapterView.OnItemSel
                         break;
                     case VR_NATIVE:
 
-                        /*
-                         * Due to a bug in the latest release of Google which is returning no
-                         * supported Locales, we need to ignore this, for now...
-                         */
-                        if (saiyRequest.isVRLanguageNativeAvailable(locale) || !saiyRequest.isVRLanguageNativeAvailable(locale)) {
+                        if (saiyRequest.isVRLanguageNativeAvailable(locale)) {
                             params.setVRProvider(Defaults.VR.NATIVE);
                             params.setVRLanguageNative(locale);
                         } else {

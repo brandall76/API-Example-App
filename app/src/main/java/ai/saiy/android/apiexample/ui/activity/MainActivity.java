@@ -104,8 +104,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         // Do not set to true in production!!
-        // Do not set to true in production!!
-        // Do not set to true in production!!
         Defaults.setLogging(true);
 
         // Set up the UI
@@ -151,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setupToolbar() {
         Log.i(CLS_NAME, "setupToolbar");
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 
@@ -161,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setupDrawer() {
         Log.i(CLS_NAME, "setupDrawer");
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -174,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setupNavigation() {
         Log.i(CLS_NAME, "setupNavigation");
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_basic);
         navigationView.getMenu().getItem(INDEX_FRAGMENT_DEMO_BASIC).setChecked(true);

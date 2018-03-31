@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
@@ -105,19 +106,20 @@ public class FragmentDemoCommand extends Fragment implements SaiyKeyphraseListen
     }
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+    public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container,
+                             final Bundle savedInstanceState) {
         Log.i(CLS_NAME, "onCreateView");
 
         final View rootView = inflater.inflate(R.layout.fragment_demo_command, container, false);
 
-        final Button buttonC1 = (Button) rootView.findViewById(R.id.buttonC1);
+        final Button buttonC1 = rootView.findViewById(R.id.buttonC1);
         buttonC1.setOnClickListener(this);
-        final Button buttonC2 = (Button) rootView.findViewById(R.id.buttonC2);
+        final Button buttonC2 = rootView.findViewById(R.id.buttonC2);
         buttonC2.setOnClickListener(this);
-        final Button buttonC3 = (Button) rootView.findViewById(R.id.buttonC3);
+        final Button buttonC3 = rootView.findViewById(R.id.buttonC3);
         buttonC3.setOnClickListener(this);
 
-        tvResults = (TextView) rootView.findViewById(R.id.tvResults);
+        tvResults = rootView.findViewById(R.id.tvResults);
         tvResults.setMovementMethod(ScrollingMovementMethod.getInstance());
 
         return rootView;
@@ -164,7 +166,7 @@ public class FragmentDemoCommand extends Fragment implements SaiyKeyphraseListen
                     break;
             }
 
-            /**
+            /*
              * When registering a keyphrase, you can include a bundle containing
              * any type of parameter. When the keyphrase is detected, a bundle will
              * be returned containing these original parameters, which can be used
@@ -177,7 +179,7 @@ public class FragmentDemoCommand extends Fragment implements SaiyKeyphraseListen
             bundle.putInt("some bundle int", Integer.MAX_VALUE);
             keyphraseRequest.setExtraBundle(bundle);
 
-            /**
+            /*
              * In production, you would identify the keyphrase detected by the
              * constant set here.
              */
