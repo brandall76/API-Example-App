@@ -127,6 +127,7 @@ public class FragmentDemoInteraction extends Fragment implements View.OnClickLis
     /**
      * Run the API.
      */
+    @SuppressWarnings("ConstantConditions")
     private void runAPI() {
         Log.i(CLS_NAME, "runAPI");
 

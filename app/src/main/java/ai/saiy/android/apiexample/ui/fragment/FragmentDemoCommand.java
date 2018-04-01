@@ -140,6 +140,7 @@ public class FragmentDemoCommand extends Fragment implements SaiyKeyphraseListen
      *
      * @param id of the view that was clicked
      */
+    @SuppressWarnings("ConstantConditions")
     public void registerKeyphrase(final int id) {
         Log.i(CLS_NAME, "registerKeyphrase");
 

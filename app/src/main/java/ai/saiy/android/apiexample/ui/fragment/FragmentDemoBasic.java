@@ -299,6 +299,7 @@ public class FragmentDemoBasic extends Fragment implements AdapterView.OnItemSel
     /**
      * Run the API using the configuration selected in the spinners.
      */
+    @SuppressWarnings("ConstantConditions")
     private void runAPI(@NonNull final String utterance) {
         Log.i(CLS_NAME, "runAPI");
 
@@ -517,6 +518,7 @@ public class FragmentDemoBasic extends Fragment implements AdapterView.OnItemSel
     /**
      * Hide the IME once the input is complete
      */
+    @SuppressWarnings("ConstantConditions")
     private void hideIME() {
         Log.i(CLS_NAME, "hideIME");
 

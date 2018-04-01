@@ -51,6 +51,11 @@ public class SaiyConfiguration {
     }
 
     /**
+     * Used with {@link android.content.Intent#ACTION_VIEW}
+     */
+    public static String SAIY_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=ai.saiy.android";
+
+    /**
      * Enter your Google Chromium Speech API key below. You need to register in the Google Group and
      * enable this in your API console. Without doing both, it WILL NOT WORK!
      */
@@ -79,7 +84,7 @@ public class SaiyConfiguration {
     public static final Uri NUANCE_SERVER_URI_NLU = Uri.parse("nmsps://" + NUANCE_APP_ID + "@"
             + NUANCE_SERVER_HOST_NLU + ":" + NUANCE_SERVER_PORT);
 
-    //Only needed if using NLU
+    // Only needed if using NLU
     public static final String NUANCE_CONTEXT_TAG = "_your_context_tag_here_";
 
     /**
@@ -119,12 +124,11 @@ public class SaiyConfiguration {
     /**
      * An example of fixed parameters you would use in production.
      *
-     * @param ctx the application context
+     * @param ctx    the application context
+     * @param locale the resolved {@link Locale} of the request
      * @return populated {@link SaiyRequestParams}
      */
-    public static SaiyRequestParams getProductionParams(@NonNull final Context ctx) {
-
-        final Locale locale = Locale.getDefault();
+    public static SaiyRequestParams getProductionParams(@NonNull final Context ctx, @NonNull final Locale locale) {
 
         final SaiyRequestParams productionParams = new SaiyRequestParams();
 

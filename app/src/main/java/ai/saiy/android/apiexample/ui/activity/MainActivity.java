@@ -49,6 +49,8 @@ import ai.saiy.android.apiexample.ui.fragment.FragmentDemoBasic;
 import ai.saiy.android.apiexample.ui.fragment.FragmentDemoCommand;
 import ai.saiy.android.apiexample.ui.fragment.FragmentDemoInteraction;
 
+import static ai.saiy.android.apiexample.configuration.SaiyConfiguration.SAIY_PLAYSTORE_URL;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         SaiyListener {
 
@@ -159,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setupDrawer() {
         Log.i(CLS_NAME, "setupDrawer");
 
-        drawer =  findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -383,7 +385,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(final DialogInterface dialog, final int which) {
 
                 final Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://play.google.com/store/apps/details?id=ai.saiy.android"));
+                        Uri.parse(SAIY_PLAYSTORE_URL));
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 try {
@@ -402,12 +404,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     /**
-     * Check if the required permissions have been granted
-     *
-     * @return true if the permission have granted, false if they are awaiting approval or have
-     * been denied. For API < 23 this will immediately return true.
+     * Check if the required permissions have been granted. For API < 23 this will immediately return true.
      */
-    private boolean checkPermissionsAndPrompt() {
+    private void checkPermissionsAndPrompt() {
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED
@@ -429,11 +428,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else {
             Log.i(CLS_NAME, "checkPermissionsAndPrompt: PERMISSION_GRANTED");
-
-            return true;
         }
-
-        return false;
     }
 
     @Override
@@ -648,6 +643,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Log.i(CLS_NAME, "onDestroy");
         saiyRequest = null;
         params = null;
+
+        // Why not
         System.gc();
         System.exit(0);
     }

@@ -73,7 +73,7 @@ public class MyIntentService extends IntentService {
     protected void onHandleIntent(final Intent intent) {
         Log.i(CLS_NAME, "onHandleIntent");
 
-        if (intent != null) {
+        if (intent != null && intent.getExtras() != null) {
             examineIntent(intent.getExtras());
 
             switch (intent.getIntExtra(SaiyKeyphrase.SAIY_ACTION, 0)) {
